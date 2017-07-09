@@ -10,7 +10,7 @@ public class Player {
 	private String[] inventory;  
 	//private int exCode; 
 	
-	Player(){	
+	public Player(){	
 		gold = 0; 
 		health = 0; 
 		magicka = 0; 
@@ -19,67 +19,70 @@ public class Player {
 		level = 1; 
 	}
 	
-	Player(int sgold, int shealth, int smagicka){
-		gold = sgold; 
-		health = shealth; 
-		magicka = smagicka; 
+	public Player(int gold, int health, int magicka){
+		this.gold = gold; 
+		this.health = health; 
+		this.magicka = magicka; 
 		inventory = new String[15] ;
 		xpCap = 100; 
 		level = 1; 
 	}
 	
-	int getHealth(){
+	public int getHealth(){
 		return health; 
 	}
 	
-	void setHealth(int nh){
-		health = nh;  
+	public void setHealth(int amount){
+		health = amount;  
 	}
 	
-	int getMagicka(){
+	public int getMagicka(){
 		return magicka; 
 	}
 	
-	void setMagicka(int nm){
-		magicka = nm; 
+	public void setMagicka(int amount){
+		magicka = amount; 
 	}
 	
-	int getGold(){
+	public int getGold(){
 		return gold; 
 	}
 	
-	void setGold(int ng){
-		gold = ng; 
+	public void setGold(int amount){
+		gold = amount; 
 	}
-	int getXP(){
+	
+	public int getXP(){
 		return experience; 
 	}
 	
-	void setXP(int nxp){
-		experience = nxp; 
+	public void setXP(int amount){
+		experience = amount; 
 	}
 	
-	int getLevel(){
-		return level; 
-	}
-	
-	void setLevel(int lvl){
-		level = lvl; 
-	}
-	
-	void updateLevel(){
-		if(experience >= xpCap){
-			experience -= xpCap; 
+	public void gainXP(int amount) {
+		experience += amount;
+		if(experience >= xpCap) {
+			experience -= xpCap;
 			level++;
 		}
 	}
-	void updateXpCap(){
+	
+	public int getLevel(){
+		return level; 
+	}
+	
+	public void setLevel(int lvl){
+		level = lvl; 
+	}
+	
+	public void updateXpCap(){
 		if(experience >= xpCap){
 			xpCap *= 1.5; 
 		}
 	}
 
-	void printInventory(){
+	public void printInventory(){
 		for(int i = 0; i < inventory.length; i++ ){
 			if(i%3 == 0){
 				System.out.println(); 
@@ -88,9 +91,8 @@ public class Player {
 		}
 	}
 	
-	void printMenu(){
+	public void printMenu(){
 		System.out.println("[1] Inventory");
 		System.out.println("[2] Exit");
 	}
-
 }

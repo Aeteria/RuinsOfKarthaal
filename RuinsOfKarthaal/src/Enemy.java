@@ -7,57 +7,58 @@ public class Enemy {
 	private int dropGold;
 	private int dropXP; 
 	
-
-	Enemy(){
-		
+	public Enemy(){
 	}
-	Enemy(int sattack, int shp){
-		attack = sattack; 
-		hp = shp; 
+	
+	public Enemy(int attack, int hp){
+		this.attack = attack; 
+		this.hp = hp; 
 		dropGold = (int) (((Math.random()*pEN.getLevel())*12)+(5));
 		dropXP = (int) (((Math.random()*pEN.getLevel())*20)+(5));
 	}
 	
-	int getAttack(){
+	public int getAttack(){
 		return attack; 
 	}
 	
-	void setAttack(int attk){
-		attack = attk; 
+	public void setAttack(int amount){
+		attack = amount; 
 	}
 	
-	int getHP(){
+	public int getHP(){
 		return hp; 
 	}
 	
-	void setHP(int nhp){
-		hp = nhp; 
+	public void setHP(int amount){
+		hp = amount; 
 	}
 	
-	int getDropGold(){
+	public int getDropGold(){
 		return dropGold; 
 	}
 	
-	void setDropGold(int dg){
-		dropGold = dg; 
+	public void setDropGold(int amount){
+		dropGold = amount; 
 	}
 	
-	int getDropXP(){
+	public int getDropXP(){
 		return dropXP; 
 	}
 	
-	void setDropXP(int dxp){
-		dropXP = dxp; 
+	public void setDropXP(int amount){
+		dropXP = amount; 
 	}
-	void updateDropGold(){
+	
+	public void updateDropGold(){
 		dropGold = (int) (((Math.random()*pEN.getLevel())*12)+(5));
 	}
-	void updateDropXP(){
+	
+	public void updateDropXP(){
 		dropXP = (int) (((Math.random()*pEN.getLevel())*20)+(5));
 	}
-	void updateEnemy(){
+	
+	public void updateEnemy(){
 		updateDropXP(); 
 		updateDropGold(); 
 	}
-	
 }

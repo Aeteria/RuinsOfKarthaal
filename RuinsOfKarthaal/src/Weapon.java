@@ -1,31 +1,23 @@
-public class Weapon {
+public class Weapon extends Item{
 
-	String name; 
-	int attack; 
+	private int attack; 
 	
-	Weapon(){
+	public Weapon(){
+		super();
 		attack = 0; 
 	}
 	
-	Weapon(String wname,  int nattack){
-		name = wname; 
-		attack = nattack; 
+	public Weapon(String name, String description, int attack){
+		super(name, description);
+		this.attack = attack; 
 	}
 	
-	int getAttack(){
+	public int getAttack(){
 		return attack; 
 	}
 	
-	void setAttack(int attk){
-		attack = attk; 
+	public void setAttack(int attack){
+		this.attack = attack; 
 	}
-	
-	String getName(){
-		return name; 
-	}
-	void setName(String nme){
-		name = nme;
-	}
-	
 	
 }

@@ -1,41 +1,60 @@
 
 public class Room {
-	private String description; 
+	private String descriptionA; 
 	private String descriptionB; 
-	private  int numEnemies; 
-	private boolean town;
-	Room(){
-		
-	}
-	Room(String desc, String descB, int numEn, boolean town){
-		description = desc; 
-		descriptionB = descB;
-		numEnemies = numEn; 
+	private int numEnemies; 
+	private boolean isTown;
+	private Town town;
+	
+	public Room(){
 	}
 	
-	String getDescriptions(){
-		return description; 
+	public Room(String descriptionA, String descriptionB, int numEnemies, boolean isTown){
+		this.descriptionA = descriptionA; 
+		this.descriptionB = descriptionB;
+		this.numEnemies = numEnemies; 
+		if(isTown) {
+			town = new Town();
+		}
 	}
-	void setDescription(String ndesc){
-		description = ndesc;  
+	
+	public String getDescriptions(){
+		return descriptionA; 
 	}
-	String getBreifDesc(){
+	
+	public void setDescription(String description){
+		descriptionA = description;  
+	}
+	
+	public String getBreifDesc(){
 		return descriptionB; 
 	}
 	
-	void setBreifDesc(String ndescb){
-		descriptionB = ndescb; 
+	public void setBreifDesc(String description){
+		descriptionB = description; 
 	}
-	int getNumEnemies(){
+	
+	public int getNumEnemies(){
 		return numEnemies; 
 	}
-	void setNumEnemies(int nNum){
+	
+	public void setNumEnemies(int nNum){
 		numEnemies = nNum; 
 	}
-	boolean isTown(){
+	
+	public boolean isTown(){
+		return isTown; 
+	}
+	
+	public void setTown(boolean isTown){
+		this.isTown = isTown;
+	}
+	
+	public Town getTown(){
 		return town; 
 	}
-	void setTown(boolean isTown){
-		town = isTown;
+	
+	public void setTown(Town town){
+		this.town = town; 
 	}
 }

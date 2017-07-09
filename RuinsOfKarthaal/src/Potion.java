@@ -1,52 +1,34 @@
 
-public class Potion {
+public class Potion extends Item{
 	
-	private String name; 
-	private String description; 
-	private int plusHealth; 
-	private int plusMagic; 
+	private int health; 
+	private int magic; 
 	
-	Potion(){
-		plusHealth = 0; 
-		plusMagic = 0; 
-	}
-	Potion(String pname, int ph, int pmaj){
-		name = pname; 
-		plusHealth = ph; 
-		plusMagic = pmaj; 
+	public Potion(){
+		super();
+		health = 0; 
+		magic = 0; 
 	}
 	
-	int getPlusHealth(){
-		return plusHealth; 
+	public Potion(String name, String description, int health, int Magic){
+		super(name, description);
+		this.health = health; 
+		this.magic = Magic; 
 	}
 	
-	void setPlusHealth(int ph){
-		plusHealth = ph; 
+	public int getHealth(){
+		return health; 
 	}
 	
-	int getPlusMagic(){
-		return plusMagic; 	
+	public void setHealth(int health){
+		this.health = health; 
 	}
 	
-	void setPlusMagic(int pmaj){
-		plusMagic = pmaj; 
+	public int getMagic(){
+		return magic; 	
 	}
 	
-	String getName(){
-		return name; 
+	public void setMagic(int magic){
+		this.magic = magic; 
 	}
-
-	void setName(String pname){
-		name = pname; 
-	}
-	
-	String getDescription(){
-		return description;  
-	}
-	
-	void setDescription(String gd){
-		description  = gd; 
-	}
-	
-	
 }
