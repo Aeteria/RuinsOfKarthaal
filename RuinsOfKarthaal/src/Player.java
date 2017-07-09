@@ -7,14 +7,14 @@ public class Player {
 	private int experience; 
 	private int xpCap; 
 	private int level;  
-	private String[] inventory;  
+	private Item[] inventory;  
 	//private int exCode; 
 	
 	public Player(){	
 		gold = 0; 
 		health = 0; 
 		magicka = 0; 
-		inventory = new String[15] ; 
+		inventory = new Item[15] ; 
 		xpCap = 100; 
 		level = 1; 
 	}
@@ -87,7 +87,7 @@ public class Player {
 			if(i%3 == 0){
 				System.out.println(); 
 			}
-			System.out.print("[" + (i + 1) + "] " + inventory[i] + "  ");
+			System.out.print("[" + (i + 1) + "] " + inventory[i].getName() + "  ");
 		}
 	}
 	
