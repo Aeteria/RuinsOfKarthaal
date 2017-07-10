@@ -7,6 +7,7 @@ public class Player {
 	private int experience; 
 	private int xpCap; 
 	private int level;  
+	private String name; 
 	private Item[] inventory;  
 	//private int exCode; 
 	
@@ -75,7 +76,12 @@ public class Player {
 	public void setLevel(int lvl){
 		level = lvl; 
 	}
-	
+	public String getName(){
+		return name; 
+	}
+	public void setName(String n){
+		name = n; 
+	}
 	public void updateXpCap(){
 		if(experience >= xpCap){
 			xpCap *= 1.5; 
