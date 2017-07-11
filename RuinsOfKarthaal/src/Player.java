@@ -14,8 +14,7 @@ public class Player {
 	public Player(){	
 		gold = 0; 
 		health = 0; 
-		magicka = 0; 
-		inventory = new Item[15] ; 
+		magicka = 0;
 		xpCap = 100; 
 		level = 1; 
 	}
@@ -24,7 +23,6 @@ public class Player {
 		this.gold = gold; 
 		this.health = health; 
 		this.magicka = magicka; 
-		inventory = new Item[15] ;
 		xpCap = 100; 
 		level = 1; 
 	}
