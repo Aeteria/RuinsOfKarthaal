@@ -1,5 +1,5 @@
 
-public abstract class Item {
+public class Item {
 	
 	private String name;
 	private String description;
