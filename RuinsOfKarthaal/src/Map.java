@@ -22,7 +22,7 @@ public class Map {
 	
 	void roomNorth(){
 		if(row == 0 ){
-			System.out.println("I a dark forrest looms ahead.... you cannot continue in this direction");
+			System.out.println("A dark forrest looms ahead.... you cannot continue in this direction");
 		}else{
 			row++;
 			currentRoom = rooms[row][col];
@@ -32,7 +32,7 @@ public class Map {
 	}
 	void roomSouth(){
 		if(row == rooms[0].length-1){
-			System.out.println("A step mountain blocks your path. You attempt to climb it but fail.... you cannot continue in this direction");
+			System.out.println("A steep mountain blocks your path. You attempt to climb it but fail.... you cannot continue in this direction");
 		}else{
 			row--;
 			currentRoom = rooms[row][col];
@@ -41,7 +41,7 @@ public class Map {
 	}
 	void roomEast(){
 		if(col == 0 ){
-			System.out.println("I a dark perilous wasteland  looms in the distance.... you cannot continue in this direction");
+			System.out.println("A perilous wasteland  looms in the distance.... you cannot continue in this direction");
 		}else{
 			col++;
 			currentRoom = rooms[row][col];
@@ -49,6 +49,12 @@ public class Map {
 		}
 	}
 	void roomWest(){
-		
+		if(col == rooms[0].length-1 ){
+			System.out.println("You attempt to move in this direction and almost fall into a bottomless crevice.... you cannot continue in this direction");
+		}else{
+			col--;
+			currentRoom = rooms[row][col];
+			currentRoom.getDescriptions(); 
+		}
 	}
 }
